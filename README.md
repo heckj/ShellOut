@@ -39,6 +39,7 @@ print(output) // Hello world
 ```
 
 You can also easily run a series of commands at once, optionally at a given path:
+
 ```swift
 try shellOut(to: ["mkdir NewFolder", "echo \"Hello again\" > NewFolder/File"], at: "~/CurrentFolder")
 let output = try shellOut(to: "cat File", at: "~/CurrentFolder/NewFolder")
@@ -46,6 +47,7 @@ print(output) // Hello again
 ```
 
 In case of an error, ShellOut will automatically read `STDERR` and format it nicely into a typed Swift error:
+
 ```swift
 do {
     try shellOut(to: "totally-invalid")
@@ -134,7 +136,7 @@ Don't see what you're looking for in the list above? You can easily define your 
 - Add `.package(url: "https://github.com/JohnSundell/ShellOut.git", from: "2.0.0")` to your `Package.swift` file's `dependencies`.
 - Update your packages using `$ swift package update`.
 
-## Help, feedback or suggestions?
+## Help, feedback or suggestions
 
 - [Open an issue](https://github.com/JohnSundell/ShellOut/issues/new) if you need help, if you found a bug, or if you want to discuss a feature request.
 - [Open a PR](https://github.com/JohnSundell/ShellOut/pull/new/master) if you want to make some change to ShellOut.
