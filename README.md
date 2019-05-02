@@ -5,6 +5,29 @@ Welcome to ShellOut, a simple package that enables you to easily “shell out”
 
 Even though you can accomplish most of the tasks you need to do in native Swift code, sometimes you need to invoke the power of the command line from a script or tool - and this is exactly what ShellOut makes so simple.
 
+## Fork Notes
+
+This repo is a fork of the original ShellOut, with patches applied that had been submitted to the original, specifically:
+- https://github.com/JohnSundell/ShellOut/pull/32
+- https://github.com/JohnSundell/ShellOut/pull/42
+
+To resolve an exception on Linux and to enable asynchronous handlers.
+
+This fork is primarily for my own purposes, and hasn't been tested/validated across all platforms (IOS, MacOS, Linux, let alone Windows).
+
+Possibly worth mentioning, somewhat comparable work/code that *doesn 't* use the
+Foundation Pipe and Process classes exists in [SwiftPM](https://github.com/apple/swift-package-manager),
+specifically in the package 'Basic'
+(ref: [Basic/Process](https://github.com/apple/swift-package-manager/blob/master/Sources/Basic/Process.swift)).
+
+I don't have a reference for the information, but my understanding is that SwiftPM wanted/needed a means to
+invoke processes that didn't close the filehandles (which apparently happened with the Foundation libraries).
+The SwiftPM Process code doesn't use Pipe at all, and instead offers API to either capture the output or
+process it directly with a closure.
+
+There's been some talk of externalizing the code in SwiftPM, but as of this fork and creation, it hasn't been
+broken out, so for some tasks and needs this fork may be a more convenient option.
+
 ## Usage
 
 Just call `shellOut()`, and specify what command you want to run, along with any arguments you want to pass:
