@@ -7,12 +7,13 @@ Even though you can accomplish most of the tasks you need to do in native Swift 
 
 ## Fork Notes
 
-This repo is a fork of the original ShellOut, with patches applied that had been submitted to the original, specifically:
+This repo is a fork of the original ShellOut, with patches applied that had been submitted to the original.
+Specifically:
 
 - <https://github.com/JohnSundell/ShellOut/pull/32>
 - <https://github.com/JohnSundell/ShellOut/pull/42>
 
-To resolve an exception on Linux and to enable asynchronous handlers.
+These resolve an exception when run on Linux and enable asynchronous handlers.
 
 This fork is primarily for my own purposes, and hasn't been tested/validated across all platforms (IOS, MacOS, Linux, let alone Windows).
 
@@ -88,8 +89,6 @@ try shellOut(to: .createSymlink(to: "target", at: "link"))
 try shellOut(to: .expandSymlink(at: "link"))
 ```
 
-*For a more powerful and object-oriented way to handle Files & Folders in Swift, check out [Files](https://github.com/JohnSundell/Files)*
-
 ### Use [Marathon](https://github.com/JohnSundell/Marathon)
 
 ```swift
@@ -120,24 +119,17 @@ try shellOut(to: .updateCocoaPods())
 try shellOut(to: .installCocoaPods())
 ```
 
-Don't see what you're looking for in the list above? You can easily define your own commands using `ShellOutCommand`. If you've made a command you think should be included among the built-in ones, feel free to [open a PR](https://github.com/JohnSundell/ShellOut/pull/new/master)!
+Don't see what you're looking for in the list above? You can easily define your own commands using `ShellOutCommand`. If you've made a command you think should be included among the built-in ones, feel free to [open a PR](https://github.com/heckj/ShellOut/pull/new/master)!
 
 ## Installation
 
-### For scripts
-
-- Install [Marathon](https://github.com/johnsundell/marathon).
-- Add ShellOut to Marathon using `$ marathon add https://github.com/JohnSundell/ShellOut.git`.
-- Alternatively, add `https://github.com/JohnSundell/ShellOut.git` to your `Marathonfile`.
-- Write your script, then run it using `$ marathon run yourScript.swift`.
-
 ### For command line tools
 
-- Add `.package(url: "https://github.com/JohnSundell/ShellOut.git", from: "2.0.0")` to your `Package.swift` file's `dependencies`.
+- Add `.package(url: "https://github.com/heckj/ShellOut.git", from: "2.2.0")` to your `Package.swift` file's `dependencies`.
 - Update your packages using `$ swift package update`.
 
 ## Help, feedback or suggestions
 
-- [Open an issue](https://github.com/JohnSundell/ShellOut/issues/new) if you need help, if you found a bug, or if you want to discuss a feature request.
-- [Open a PR](https://github.com/JohnSundell/ShellOut/pull/new/master) if you want to make some change to ShellOut.
-- Contact [@johnsundell on Twitter](https://twitter.com/johnsundell) for discussions, news & announcements about ShellOut & other projects.
+- [Open an issue](https://github.com/heckj/ShellOut/issues/new) if you need help, if you found a bug, or if you want to discuss a feature request.
+- [Open a PR](https://github.com/heckj/ShellOut/pull/new/master) if you want to make some change to ShellOut.
+
