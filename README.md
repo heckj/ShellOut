@@ -8,8 +8,9 @@ Even though you can accomplish most of the tasks you need to do in native Swift 
 ## Fork Notes
 
 This repo is a fork of the original ShellOut, with patches applied that had been submitted to the original, specifically:
-- https://github.com/JohnSundell/ShellOut/pull/32
-- https://github.com/JohnSundell/ShellOut/pull/42
+
+- <https://github.com/JohnSundell/ShellOut/pull/32>
+- <https://github.com/JohnSundell/ShellOut/pull/42>
 
 To resolve an exception on Linux and to enable asynchronous handlers.
 
