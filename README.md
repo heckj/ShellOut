@@ -30,6 +30,9 @@ process it directly with a closure.
 There's been some talk of externalizing the code in SwiftPM, but as of this fork and creation, it hasn't been
 broken out, so for some tasks and needs this fork may be a more convenient option.
 
+The linux tests have also been updated to take advantage of `swift test --generate-linuxmain` to assemble the
+relevant tests for use under swift on Linux.
+
 ## Usage
 
 Just call `shellOut()`, and specify what command you want to run, along with any arguments you want to pass:
