@@ -145,6 +145,8 @@ class ShellOutTests: XCTestCase {
             XCTAssertTrue(error.output.isEmpty)
             XCTAssertTrue(error.terminationStatus != 0)
 
+            // Error in Linux:
+            // /home/travis/build/heckj/ShellOut/Tests/ShellOutTests/ShellOutTests.swift:149: error: ShellOutTests.testCapturingErrorWithFileHandle : XCTAssertEqual failed: ("Optional("/bin/bash: line 0: cd: notADirectory: No such file or directory\n")") is not equal to ("Optional("")") -
             let capturedData = pipe.fileHandleForReading.readDataToEndOfFile()
             XCTAssertEqual(error.message + "\n", String(data: capturedData, encoding: .utf8))
         } catch {

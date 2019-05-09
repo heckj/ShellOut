@@ -33,6 +33,24 @@ broken out, so for some tasks and needs this fork may be a more convenient optio
 The linux tests have also been updated to take advantage of `swift test --generate-linuxmain` to assemble the
 relevant tests for use under swift on Linux.
 
+## Testing with Swift on Linux using docker
+
+run a docker image of swift, loading this directory as a volume under /package and run a build and test:
+
+```bash
+docker run --rm --volume "$(pwd):/package" \
+--workdir "/package" \
+swift:5.0 \
+/bin/bash -c "swift package resolve && swift test --build-path ./.build/linux"
+```
+
+```bash
+docker run --rm --volume "$(pwd):/package" \
+--workdir "/package" \
+swift:4.2 \
+/bin/bash -c "swift package resolve && swift test --build-path ./.build/linux"
+```
+
 ## Usage
 
 Just call `shellOut()`, and specify what command you want to run, along with any arguments you want to pass:
